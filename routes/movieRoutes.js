@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/movies", (req, res) => {
-    res.status(404).json({error: "No id query"})
+    res.status(404).json({error: "No id parameter found"})
 })
 
 module.exports = router;
