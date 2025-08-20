@@ -9,3 +9,7 @@ const movieRoutes = require("./routes/movieRoutes")
 
 app.use("/api/search", movieRoutes);
 app.use("/api/movies/:id", movieRoutes);
+
+app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`)
+})
