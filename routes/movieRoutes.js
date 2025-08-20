@@ -2,8 +2,16 @@ const express = require("express");
 const router = express.Router();
 const movieControllers = require("../controllers/movieControllers");
 
-router.get("/api/search", movieControllers.searchMovies);
+router.get("/search", movieControllers.searchMovies);
 
-router.get("/api/movies/:id", movieControllers.getMovieDetails);
+router.get("/movies/:id", movieControllers.getMovieDetails);
+
+router.get("/", (req, res) => {
+    res.status(404).json({error: "Page not found"})
+})
+
+router.get("/movies", (req, res) => {
+    res.status(404).json({error: "No id query"})
+})
 
 module.exports = router;

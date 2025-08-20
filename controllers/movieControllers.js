@@ -35,8 +35,7 @@ const searchMovies = async (req, res) => {
 
 const getMovieDetails = async (req, res) => {
   const id = req.params.id;
-
-  console.log(id);
+  
   if (!id || id === "") {
     res.status(404).json({ error: "id is required" });
   } else {
