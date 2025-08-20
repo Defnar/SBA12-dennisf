@@ -7,4 +7,5 @@ const app = express();
 const port = process.env.PORT;
 const movieRoutes = require("./routes/movieRoutes")
 
-app.use("/", movieRoutes);
+app.use("/api/search", movieRoutes);
+app.use("/api/movies/:id", movieRoutes);
