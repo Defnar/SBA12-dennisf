@@ -7,7 +7,7 @@ const searchMovies = async (req, res) => {
         res.status(404).json({"error": "Title query parameter is required"});
     else {
         try {
-            const url = `s=${title}`
+            const url = `?apikey=${OMDB_API_KEY}&s=${title}`
             const response = await movieApi.get(url);
 
             res.json(response.data);
