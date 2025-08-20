@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const movieControllers = require("../controllers/movieControllers")
+const movieControllers = require("../controllers/movieControllers");
 
 router.get("/api/search", movieControllers.searchMovies);
 

@@ -1,5 +1,6 @@
 const movieApi = require("../api/movieApi");
 
+
 const fetchData = async (url, res) => {
   try {
     const response = await movieApi.get(url);
@@ -27,7 +28,7 @@ const searchMovies = async (req, res) => {
   if (!title)
     res.status(404).json({ error: "Title query parameter is required" });
   else {
-    const url = `?apikey=${OMDB_API_KEY}&s=${title}`;
+    const url = `?apikey=${process.env.OMDB_API_KEY}&s=${title}`;
     fetchData(url, res);
   }
 };
@@ -35,10 +36,11 @@ const searchMovies = async (req, res) => {
 const getMovieDetails = async (req, res) => {
   const id = req.params.id;
 
+  console.log(id);
   if (!id || id === "") {
     res.status(404).json({ error: "id is required" });
   } else {
-    const url = `?apikey=${OMDB_API_KEY}&i=${id}`;
+    const url = `?apikey=${process.env.OMDB_API_KEY}&i=${id}`;
     fetchData(url, res);
   }
 };

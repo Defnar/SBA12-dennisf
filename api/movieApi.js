@@ -2,7 +2,7 @@ const axios = require("axios");
 
 
 const movieApi = axios.create({
-    baseURL: `http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&`
+    baseURL: `http://www.omdbapi.com/`
 })
 
 module.exports = movieApi;
